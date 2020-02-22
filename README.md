@@ -12,5 +12,8 @@ How to:
 **You need to be connected to the same wifi to work. Also, you can use as many clients as you want.Group Chat functional!
 
 Coming Updates:
+
 -G.U.I
+
+
 -SQL Database

@@ -1,0 +1,4 @@
+﻿  MultiServer.cpp
+C:\Users\rafor\Documents\1 YEAR PLAN\Winter Break 2019\WINTER 2020\Server\MultiServer\MultiServer\MultiServer.cpp(10,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\rafor\Documents\1 YEAR PLAN\Winter Break 2019\WINTER 2020\Server\MultiServer\MultiServer\MultiServer.cpp(91,24): warning C4018: '<': signed/unsigned mismatch
+  MultiServer.vcxproj -> C:\Users\rafor\Documents\1 YEAR PLAN\Winter Break 2019\WINTER 2020\Server\MultiServer\Debug\MultiServer.exe

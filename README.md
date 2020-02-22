@@ -13,7 +13,7 @@ How to:
 
 Coming Updates:
 
--G.U.I
+-G.U.I (March 2020)
 
 
--SQL Database
+-SQL Database (March 2020)

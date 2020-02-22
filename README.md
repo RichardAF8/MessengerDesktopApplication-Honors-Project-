@@ -7,6 +7,8 @@ How to:
 2) Go on command prompt and type in ipconfig and scroll down to your IPV4 addrress.
 2) Use another IDEA to open the java client and paste in your ipv4 adress address in the TTS_Client constructor before running the code. The 85 is the port number which you do not have to change.
 3) Start the client on another laptop and send messages to each other!
+
+
 **You need to be connected to the same wifi to work. Also, you can use as many clients as you want.Group Chat functional!
 
 Coming Updates:

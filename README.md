@@ -8,8 +8,11 @@ How to:
 2) Go on command prompt and type in ipconfig and scroll down to your IPV4 addrress.
 
 3) Get the client code then import the Jar files for the API from:
+
 https://github.com/goxr3plus/Java-Text-To-Speech-Tutorial/tree/master/Mary%20TTS%20Program/libraries
+
 or 
+
 http://mary.dfki.de/
 
 4) Use another IDEA to open the java client and paste in your ipv4 adress address in the TTS_Client constructor before running the code. The 85 is the port number which you do not have to change.

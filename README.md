@@ -24,7 +24,8 @@ http://mary.dfki.de/
 
 Coming Updates:
 
--G.U.I (March 2020)
+-G.U.I (March 2020) (Completed!!!)
+{Make sure tht you have JavaFX installed}
 
 
 -SQL Database (March 2020)

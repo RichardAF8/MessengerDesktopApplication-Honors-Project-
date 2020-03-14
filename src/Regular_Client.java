@@ -1,3 +1,7 @@
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
+import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
 
@@ -9,8 +13,9 @@ public class Regular_Client extends T_C_P {
 
 
 
-    //implements abstract method recieveMessage
-    public void recieveMessage() throws IOException {
+    //implements abstract method receiveMessage
+    @Override
+    public void receiveMessage(TextArea view) throws IOException {
         while (true) {
             try {
                 //InputStream, represents an ordered stream of bytes.

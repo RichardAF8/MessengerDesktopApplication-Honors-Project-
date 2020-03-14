@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="343.0" prefWidth="505.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="97.0" prefWidth="505.0">
+         <children>
+            <Text fill="#098034" layoutX="57.0" layoutY="74.0" strikethrough="true" stroke="#3c0c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat Prototype" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="WAIT" />
+               </cursor>
+            </Text>
+         </children></AnchorPane>
+      <TextArea fx:id="screen" editable="false" layoutX="19.0" layoutY="86.0" prefHeight="190.0" prefWidth="336.0">
+         <effect>
+            <InnerShadow color="#d8a124" />
+         </effect></TextArea>
+      <CheckBox fx:id="button" layoutX="390.0" layoutY="159.0" mnemonicParsing="false" onAction="#activate" prefHeight="25.0" prefWidth="75.0" text="Voice">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></CheckBox>
+      <TextArea fx:id="text" layoutX="19.0" layoutY="296.0" prefHeight="44.0" prefWidth="336.0">
+         <effect>
+            <InnerShadow color="#164612" />
+         </effect>
+      </TextArea>
+      <Separator layoutX="358.0" layoutY="76.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="9.0">
+         <effect>
+            <Shadow blurType="GAUSSIAN" color="#c3ed3c" />
+         </effect></Separator>
+      <Separator layoutX="10.0" layoutY="76.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="9.0">
+         <effect>
+            <Shadow blurType="GAUSSIAN" color="#c3ed3c" />
+         </effect>
+      </Separator>
+      <ImageView layoutX="137.0" layoutY="131.0" opacity="0.08">
+         <image>
+            <Image url="@../images/walter2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

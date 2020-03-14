@@ -25,6 +25,7 @@ http://mary.dfki.de/
 Coming Updates:
 
 -G.U.I (March 2020) (Completed!!!)
+
 {Make sure tht you have JavaFX installed}
 
 

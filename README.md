@@ -26,7 +26,7 @@ Coming Updates:
 
 -G.U.I (March 2020) (Completed!!!)
 
-{Make sure tht you have JavaFX installed}
+{Make sure that you have JavaFX installed}
 
 
 -SQL Database (March 2020)

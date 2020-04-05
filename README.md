@@ -1,5 +1,5 @@
 # MessengerDesktopApplication-Honors-Project-
-I created a messenger like desktop application using Java for the client and C++ for the server. Another individual had made the  android app version of my client (file included).
+I created a messenger like desktop application using Java for the client and C++ for the server. Another individual I collaborated with had made the  android app version of my client (file included).
 
 How to:
 1) Download and import the files from this link

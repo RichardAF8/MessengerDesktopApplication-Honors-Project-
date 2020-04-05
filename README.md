@@ -1,23 +1,25 @@
 # MessengerDesktopApplication-Honors-Project-
-I am creating a messenger like desktop application using Java for the client and C++ for the server. 
-It's still an ongoing project, but currently usable.
+I created a messenger like desktop application using Java for the client and C++ for the server. Another individual had made the  android app version of my client (file included).
 
 How to:
-1) Use visual studio to open and run server or whatever IDE you prefer. You do not need to make any additions to the code.
+1) Download and import the files from this link
 
-2) Go on command prompt and type in ipconfig and scroll down to your IPV4 addrress.
+http://www.mediafire.com/folder/gqjwbckuoecym/Messaging_Application_(Java)
 
-3) Get the client code then import the Jar files for the API from:
+*I used visual studio for the server, intelliJ for the java desktop client (make sure javafx is installed) and android studio for the android app.
 
-https://github.com/goxr3plus/Java-Text-To-Speech-Tutorial/tree/master/Mary%20TTS%20Program/libraries
+2) In the Java client go to the Main claass and change the I.P address string in the TTS_Client constructor to your own I.P adress.
 
-or 
+*Go on command prompt and type in ipconfig and scroll down to your IPV4 addrress to find your IP address.
 
-http://mary.dfki.de/
+4A) Use another IDEA or computer to open the java client and paste in your ipv4 adress address in the TTS_Client constructor before running the code. The 85 is the port number which you do not have to change.
 
-4) Use another IDEA to open the java client and paste in your ipv4 adress address in the TTS_Client constructor before running the code. The 85 is the port number which you do not have to change.
+                                                                   OR
+4B) Import and use the Android app, run, type in your ip address and set port number to 85 and then click connect.
 
-5) Start the client on another laptop and send messages to each other!
+*Type in messages and click send to send messages
+
+5) All done!
 
 
 **You need to be connected to the same wifi to work. Also, you can use as many clients as you want.Group Chat functional!
@@ -27,6 +29,3 @@ Coming Updates:
 -G.U.I (March 2020) (Completed!!!)
 
 {Make sure that you have JavaFX installed}
-
-
--SQL Database (March 2020)

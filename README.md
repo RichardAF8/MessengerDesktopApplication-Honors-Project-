@@ -25,7 +25,9 @@ http://www.mediafire.com/folder/gqjwbckuoecym/Messaging_Application_(Java)
 
 *Type in messages and click send to send messages
 
-5) All done!
+5) Run the Server then the clients.
+
+6) ALL DONE!
 
 ![HonorsApp](https://user-images.githubusercontent.com/55858312/78512369-c38f5780-7758-11ea-9f51-4dc8e596b82f.PNG)
 

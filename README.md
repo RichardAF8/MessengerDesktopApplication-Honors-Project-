@@ -38,4 +38,4 @@ Coming Updates:
 
 -G.U.I (March 2020) (Completed!!!)
 
-{Make sure that you have JavaFX installed and import the jar files from the jar folder found included in the java client zip file}
+{Make sure that you have JavaFX installed and import the jar files from the jar folder included in the java client zip file}

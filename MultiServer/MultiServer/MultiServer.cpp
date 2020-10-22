@@ -24,7 +24,7 @@ void main()
 	//what is a flag
 	SOCKET listener = socket(AF_INET, SOCK_STREAM, 0);
 	if (listener == INVALID_SOCKET) {
-		cerr << "You Done Fucked Up";
+		cerr << "Error";
 		return;
 
 	}

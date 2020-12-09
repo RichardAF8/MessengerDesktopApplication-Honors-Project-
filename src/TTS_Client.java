@@ -7,6 +7,7 @@ public class TTS_Client extends T_C_P {
     private String text;
     private boolean voiceOn = true;
 
+    // Client with Text-To-Speech capability
     public TTS_Client(String serverAddress, int serverPort) throws Exception {
         super(serverAddress, serverPort);
         tts.setVoice("cmu-rms-hsmm");
@@ -20,14 +21,15 @@ public class TTS_Client extends T_C_P {
                 // InputStream, represents an ordered stream of bytes.
                 // In other words, you can read data from a Java InputStream as an ordered
                 // sequence of bytes.
-                InputStream rec = this.socket.getInputStream();
+                InputStream rec = getInputStream();
                 // thereby turning the byte based InputStream into a character based Reader. In
                 // other words,
                 // the Java InputStreamReader interprets the bytes of an InputStream as text
                 // instead of numerical data.
                 InputStreamReader reader = new InputStreamReader(rec);
                 int character;
-                //The String object is immutable. Every time you use one of the methods in the System.String class,
+                // The String object is immutable. Every time you use one of the methods in the
+                // System.String class,
                 // you create a new string object in memory,
                 // The System.Text.StringBuilder class can be used when you want to modify a
                 // string without creating a new object.
@@ -40,18 +42,21 @@ public class TTS_Client extends T_C_P {
                     data.append((char) character);
                 }
                 text = data.toString();
+
+
+                // appends the new message to the TextArea screen
+                updateTextField(text, view);
+
                 //only speaks if the feature is enabled
                 if (voiceOn == true) {
                     tts.speak(text, 2.0f, false, true);
                 }
-                //appends the new message to the TextArea screen
-                content = view.getText() + "\n" + text;
-                view.setText(content);
+
+                // Beeps for effect XD
                 Toolkit.getDefaultToolkit().beep();
-                System.out.print(data);
             } catch (Exception e) {
                 System.out.println(e);
-                socket.close();
+                closeSocket();
                 System.out.println("Server Closed");
                 return;
             }

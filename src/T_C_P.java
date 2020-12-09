@@ -1,4 +1,6 @@
 import javafx.scene.control.TextArea;
+import net.didion.jwnl.data.Exc;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -49,9 +51,13 @@ public abstract class T_C_P {
 
         // prevents concurrent string modification while updating TextField on the G.U.I
         lock.lock();
+        try{
         content = view.getText() + "\n" + message;
-        view.setText(content);
-        lock.unlock();
+        view.setText(content);}
+        finally {
+            lock.unlock();
+        }
+
     }
 
     public void addToQueue(String item) {

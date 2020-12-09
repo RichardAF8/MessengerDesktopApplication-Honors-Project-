@@ -10,9 +10,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.CountDownLatch;
 
 public class Main extends Application implements Initializable {
     public TextArea text;
@@ -20,42 +20,72 @@ public class Main extends Application implements Initializable {
     public CheckBox button;
     private static TTS_Client client;
     private String message;
+    // ensures the G.U.I starts first
+    private static CountDownLatch latch = new CountDownLatch(1);
 
-    //Turns on and off the Text-To-Speech feature
+    // Turns on and off the Text-To-Speech feature
     public void activate() {
         client.setVoiceOn(button.isSelected());
 
     }
-    //Sets up the Stage
+
+    // Sets up the Stage
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //imports the FXML file
+        // imports the FXML file
         Parent root = FXMLLoader.load(getClass().getResource("sample/sample.fxml"));
         primaryStage.setTitle("Chat");
         primaryStage.setScene(new Scene(root, 460.5, 343.0));
-        //Closes the entire program on exit
-        primaryStage.setOnCloseRequest((e)-> {Platform.exit(); System.exit(0);});
-        //displays window
+        // Closes the entire program on exit
+        primaryStage.setOnCloseRequest((e) -> {
+            Platform.exit();
+            System.exit(0);
+        });
+        // displays window
         primaryStage.show();
     }
 
     public static void main(String[] args) throws Exception {
 
-        //Connects to Socket
-        client = new TTS_Client("10.0.0.127", 85);
+        // Connects to Socket
+        // input your own ip address
+        client = new TTS_Client("10.0.0.126", 85);
 
         // G.U.I THREAD
         Thread gui = new Thread(() -> {
             launch(args);
         });
         gui.start();
+        latch.countDown();
     }
 
-    //Initiliazer
+    // Initializer
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //Sends Message when enter key is pressed in TextArea
+        // Starts the TTS feature
+        button.setSelected(true);
+
+        try {
+            latch.await();
+            screen.setText("Connected to Server: " + client.getInetAddress());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Thread to receive Message
+        Thread receiveMessageThread = new Thread(() -> {
+            try {
+                latch.await();
+                client.receiveMessage(screen);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return;
+            }
+        });
+        receiveMessageThread.start();
+
+        // Sends Message when enter key is pressed in TextArea
         text.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
@@ -64,29 +94,13 @@ public class Main extends Application implements Initializable {
                     text.clear();
 
                     try {
+                        latch.await();
                         client.sendMessage(message, screen);
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
         });
-        //Starts the TTS feature
-        button.setSelected(true);
-
-        //Welcome Message for Chat
-        screen.setText("Connected to Server: " + client.socket.getInetAddress());
-
-        //Thread to receive Message
-        Thread receiveMessageThread = new Thread(() -> {
-            try {
-
-                client.receiveMessage(screen);
-            } catch (IOException e) {
-                e.printStackTrace();
-                return;
-            }
-        });
-        receiveMessageThread.start();
     }
 }
